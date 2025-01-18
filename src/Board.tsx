@@ -66,6 +66,7 @@ const Board = () => {
   ]);
   useEffect(() => {
     saveInFireStore(columns, boardId.id as string);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [columns]);
   const docRef = doc(db, "retroboards", boardId.id as string);
   useEffect(() => {
@@ -83,6 +84,7 @@ const Board = () => {
     });
 
     return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [editDialogOpen, setEditDialogOpen] = useState(false);
